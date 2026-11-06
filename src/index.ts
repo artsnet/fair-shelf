@@ -1,0 +1,10 @@
+export { createShelf, DEFAULT_COOLDOWN_DAYS, DEFAULT_VERSION } from "./shelf.js";
+export { editorialPreset, rotationPreset } from "./presets.js";
+export type { EditorialItem, EditorialOptions, RotationOptions } from "./presets.js";
+export { simulate, gini } from "./simulate.js";
+export { formatSimulation } from "./report.js";
+export type { SimulateOptions, SimulationItem, SimulationResult, ItemStats } from "./simulate.js";
+export { isCalendarDate, assertCalendarDate, shiftDate, daysBetween, dayNumber, toCalendarDate } from "./dates.js";
+export { hash } from "./hash.js";
+export type { ExposureFacts, Item, Context, Slot, Lane, ShelfConfig, ResolvedShelfConfig, SelectInput, Pick, Shelf } from "./types.js";
+export { VERSION } from "./version.js";

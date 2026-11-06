@@ -1,0 +1,48 @@
+{
+  "name": "@artsnet/fair-shelf",
+  "version": "0.1.0",
+  "description": "Deterministic, fair daily rotation for curated lists: reserve a slot per role (new, underexposed, rediscovery), pick within each slot by lowest exposure, cool down recent picks, and get the same result for the same day everywhere. No popularity ranking, no randomness. Library + simulator CLI.",
+  "license": "MIT",
+  "author": "Artsnet",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artsnet/fair-shelf.git"
+  },
+  "homepage": "https://github.com/artsnet/fair-shelf#readme",
+  "bugs": "https://github.com/artsnet/fair-shelf/issues",
+  "keywords": ["fairness", "rotation", "curation", "recommendation", "deterministic", "editorial", "shelf", "typescript", "cloudflare-workers", "zero-dependency"],
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "fair-shelf": "./dist/cli.js"
+  },
+  "files": ["dist", "examples", "SKILL.md", "README.md", "LICENSE"],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "examples": "for f in examples/*.ts; do echo \"== $f\"; tsx \"$f\" || exit 1; done",
+    "example": "tsx",
+    "prepublishOnly": "npm run clean && npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.9.0",
+    "vitest": "^4.0.0"
+  }
+}
