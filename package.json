@@ -1,6 +1,6 @@
 {
   "name": "@artsnet/fair-shelf",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Deterministic, fair daily rotation for curated lists: reserve a slot per role (new, underexposed, rediscovery), pick within each slot by lowest exposure, cool down recent picks, and get the same result for the same day everywhere. No popularity ranking, no randomness. Library + simulator CLI.",
   "license": "MIT",
   "author": "Artsnet",
